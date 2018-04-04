@@ -1,31 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+<div id="app">
+    <div class="container-fluid">
+      <div class="row position-relative">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-md navbar-dark navbar-toggler bg-dark fixed-top" style="border-radius:0">
+         <a class="navbar-brand ml-0" href="/">
+           <img src="./assets/img/star.svg" class="ml-0" width="50" height="45" alt="">
+         </a>
+         <button class="navbar-toggler mr-0" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end " id="navbarTogglerDemo01">
+         <ul class="navbar-nav mr-0">
+           <li class="nav-item "><router-link to="/" class="nav-link ">Home</router-link> </li>
+           <li class="nav-item "><router-link to="/Movies" class="nav-link"> Movies</router-link> </li>
+           <li class="nav-item"><router-link to="/Characters" class="nav-link"> Characters</router-link></li>
+           <li class="nav-item "><router-link to="/Planets" class="nav-link"> Planets</router-link></li>
+           <li class="nav-item "><router-link to="/StarShips" class="nav-link"> StarShips</router-link></li>
+           <li class="nav-item"><router-link to="/Ships" class="nav-link"> Ships</router-link></li>
+         </ul> 
+         </div>
+         </nav>
+        </div>
     </div>
-    <router-view/>
-  </div>
+  </div>   
+ <router-view/>
+</div>
 </template>
 
+<script>
+
+export default {
+  name: 'app'
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css";
+li{
+-webkit-transition: all 1s ease;
+-moz-transition: all 1s ease;
+-ms-transition: all 1s ease;
+-o-transition: all 1s ease;
+transition: all 1s ease;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+li:hover{
+  color: white;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+::-webkit-scrollbar {
+  width: 0;
 }
 </style>

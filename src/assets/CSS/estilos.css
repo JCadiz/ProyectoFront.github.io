@@ -1,0 +1,145 @@
+       @import url('https://fonts.googleapis.com/css?family=Roboto');
+       * {
+           font-family: 'Roboto', sans-serif;
+       }
+       
+       h1 {
+           background: rgba(0, 0, 0, 0.1);
+       }
+       
+       video {
+           position: fixed;
+           min-width: 100%;
+           min-height: 100%;
+           top: 50%;
+           left: 50%;
+           transform: translateX(-50%) translateY(-50%);
+           z-index: -1;
+       }
+       
+       .contenedor {
+           display: flex;
+           width: 100%;
+           height: 100vh;
+           font-size: 40px;
+           line-height: 40px;
+           position: absolute;
+           top: 100px;
+           margin: auto;
+           overflow: hidden;
+           color: white;
+       }
+       
+       .contenedor>ul {
+           list-style: none;
+           padding-left: 10px;
+           animation: cambiar 7s infinite;
+       }
+       
+       @keyframes cambiar {
+           0% {
+               margin-top: 0;
+           }
+           20% {
+               margin-top: 0;
+           }
+           25% {
+               margin-top: -40px;
+           }
+           50% {
+               margin-top: -40px;
+           }
+           55% {
+               margin-top: -80px;
+           }
+           80% {
+               margin-top: -80px;
+           }
+           85% {
+               margin-top: -40px;
+           }
+           95% {
+               margin-top: -40px;
+           }
+           100% {
+               margin-top: 0;
+           }
+       }
+       
+       .contenedor>ul,
+       p {
+           margin: 0;
+       }
+       
+       .foto {
+           background-attachment: scroll;
+           background-repeat: no-repeat;
+           width: 100%;
+           height: 100vh;
+       }
+       
+       .foto1 {
+           background-position-y: 100px;
+           height: 100vh;
+       }
+       
+       .flexbox-container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+       }
+       
+       .cover {
+           background-attachment: scroll;
+       }
+       
+       .flex {
+           height: 100vh;
+           width: 35%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+       }
+       
+       .descargas {
+           display: flex;
+           justify-content: center;
+           margin-top: 5%;
+           width: 100%;
+           opacity: 1;
+           transition: 2.5s ease;
+       }
+       
+       .descargas a {
+           width: 20%;
+       }
+       
+       .descargas a img {
+           width: 80%;
+           height: 100%;
+           opacity: 1;
+           transition: 1s ease;
+       }
+       
+       .descargas a img:hover {
+           transform: scale(1.1);
+       }
+       
+       #pie {
+           flex-grow: 1;
+           color: white;
+           background-color: #2F2F2F;
+           display: flex;
+           align-items: center;
+           margin-top: 5%;
+       }
+       
+       #pie p {
+           margin-left: 2%;
+       }
+       
+        ::-webkit-scrollbar {
+           width: 0;
+       }

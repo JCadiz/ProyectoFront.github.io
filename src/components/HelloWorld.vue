@@ -1,56 +1,147 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://github.com/vuejs/vue-cli/tree/dev/docs" target="_blank">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">babel</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org/en/essentials/getting-started.html" target="_blank">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org/en/intro.html" target="_blank">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org/en" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+    <section class="container-fluid" id="helloworld">
+        <div class="row ">
+        <div class="col-12 ">
+            <div class="jumbotron jumbotron-fluid p-4 imag"  v-for="peli in mispeliculas" :key="peli.episode_id">
+              <div>
+              <h1 class="display-4 text-sm">Episode {{ peli.episode_id }}: {{ peli.title }} </h1>
+              <p class="lead text-sm">{{ peli.opening_crawl }}</p>
+              <hr class="my-4 text-sm">
+              <p class="text-sm"> Director: {{ peli.director }}</p> 
+              <p class="text-sm">Productor: {{ peli.producer }}</p>   
+              <p class="text-sm">Fecha de Lanzamiento: {{ peli.release_date }}</p>    
+              </div>       
+            </div>
+        </div>
+        </div>
+
+      </section>
+  
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  props:['HelloWorld'],
+  components:{
+    
+  },
+   mounted(){
+    console.log('componente cargado....')
+    this.getPeliculas();
+    console.log(this.mispeliculas)
+  },
+  data(){
+    return{
+      mispeliculas:[],
+      
+    }
+  },
+  methods:{
+    getPeliculas(){
+      axios.get('https://swapi.co/api/films').then(response =>{
+      console.log(response.data)
+      this.mispeliculas = response.data.results;
+      
+    }).catch(error => {
+      console.log(error)
+     });
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+section{
+  position: relative;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.imag {
+  
+  color: white;
+  background-color: #616161
+
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+#helloworld{
+  background-image: url("../assets/img/space.png");
 }
-a {
-  color: #42b983;
+
+.imag1{
+  
+
+  padding: 100px;
+  background: url("../assets/img/episodio1.jpg");
+  background-position: 0 0;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag2 {
+  
+  
+  padding: 100px;
+  background: url("../assets/img/episodio2.jpg");
+  background-position: 0 0;
+  background-size: contain;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag3 {
+  
+  
+  padding: 100px;
+  background: url("../assets/img/episodio3.jpg");
+  background-position: 0 0;
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag4 {
+  
+
+  padding: 100px;
+  background: url("../assets/img/episodio4.jpg");
+  background-position: 0 0;
+  background-size: contain;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag5 {
+  
+ 
+  padding: 100px;
+  background: url("../assets/img/episodio5.jpg");
+  background-position: 0 0;
+  background-size: contain;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag1 {
+  
+ 
+  padding: 100px;
+  background: url("../assets/img/episodio6.jpg");
+  background-position: 0 0;
+  background-size: contain;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.imag7 {
+  
+  
+  padding: 100px;
+  background: url("../assets/img/episodio7.jpg");
+  background-position: 0 0;
+  background-size: contain;
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 </style>
