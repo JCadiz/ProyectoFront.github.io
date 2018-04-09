@@ -37,17 +37,7 @@ export default {
 
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css";
-li{
--webkit-transition: all 1s ease;
--moz-transition: all 1s ease;
--ms-transition: all 1s ease;
--o-transition: all 1s ease;
-transition: all 1s ease;
-}
 
-li:hover{
-  color: white;
-}
 
 ::-webkit-scrollbar {
   width: 0;

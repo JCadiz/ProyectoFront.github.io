@@ -10,7 +10,7 @@
         <p class="text-sm">Productor: {{ peli2.producer }}</p>   
         <p class="text-sm">Fecha de Lanzamiento: {{ peli2.release_date }}</p>    
         <p class="lead">
-          <button type="button" class="btn btn-primary btn-light" data-toggle="modal" data-target="exampleModal">
+          <button type="button" class="btn btn-primary btn-light" data-toggle="modal" :data-target="'#'+ peli2.episode_id ">
             More Info 
          </button>
         </p>
@@ -18,35 +18,41 @@
       </div>
     </div>    
   </div>
-<!-- Modal box para los personajes de cada pelicula -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="peli2 in mispeliculas2" :key="peli2.episode_id">
+  
+
+<div class="modal fade" id="episode_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="(peli2,index) in mispeliculas2" :key="index">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header ">
-        <h4 class="modal-title " id="exampleModalLabel"> Characters Episode {{ peli2.episode_id }}: {{ peli2.title }} </h4>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Characters pelicula 4</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <per :url="peli2.characters"></per>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
+
 </section>
 </template>
 <script>
 import axios from 'axios'
+import Per from './subcomponents/Per.vue'
 
 export default {
   name: 'cfilm',
   props:['cfilm'],
+  components:{
+    'per': Per
+  },
    mounted(){
     console.log('componente cargado movies')
     this.getPeliculas();
