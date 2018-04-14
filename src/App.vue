@@ -12,12 +12,12 @@
          </button>
          <div class="collapse navbar-collapse justify-content-end " id="navbarTogglerDemo01">
          <ul class="navbar-nav mr-0">
-           <li class="nav-item "><router-link to="/" class="nav-link ">Home</router-link> </li>
-           <li class="nav-item "><router-link to="/Movies" class="nav-link"> Movies</router-link> </li>
-           <li class="nav-item"><router-link to="/Characters" class="nav-link"> Characters</router-link></li>
-           <li class="nav-item "><router-link to="/Planets" class="nav-link"> Planets</router-link></li>
-           <li class="nav-item "><router-link to="/StarShips" class="nav-link"> StarShips</router-link></li>
-           <li class="nav-item"><router-link to="/Ships" class="nav-link"> Ships</router-link></li>
+           <li class="nav-item "><router-link to="/" class="nav-link  fuente " >Home</router-link> </li>
+           <li class="nav-item "><router-link to="/Movies" class="nav-link fuente"> Movies</router-link> </li>
+           <li class="nav-item"><router-link to="/Characters" class="nav-link fuente"> Characters</router-link></li>
+           <li class="nav-item "><router-link to="/Planets" class="nav-link fuente"> Planets</router-link></li>
+           <li class="nav-item "><router-link to="/StarShips" class="nav-link fuente"> StarShips</router-link></li>
+           <li class="nav-item"><router-link to="/Ships" class="nav-link fuente"> Ships</router-link></li>
          </ul> 
          </div>
          </nav>
@@ -31,13 +31,30 @@
 <script>
 
 export default {
-  name: 'app'
+  name: 'app',
+  
+  
 }
+
 </script>
 
-<style>
+<style >
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css";
 
+.fuente{
+  font-family: starjedi;
+}
+
+ h1, h3,h4, h5{
+   font-family: starjedi;
+ }
+
+@font-face {
+    font-family: "starjedi";
+    font-style: normal;
+    font-weight: normal;
+    src: local("?"), url("../public/fonts/Starjedi.eot") format("eot"), url("../public/fonts/Starjedi.ttf") format("truetype");
+}
 
 ::-webkit-scrollbar {
   width: 0;

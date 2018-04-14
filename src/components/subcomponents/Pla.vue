@@ -1,8 +1,8 @@
 <template>
   <div>
-     <ul class="list-group list-group-flush" >
+     
        <li class="list-group-item">Homeland: {{ misPlaneta.name }}</li>
-     </ul>
+     
 </div>
 </template>
 <script>

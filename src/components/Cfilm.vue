@@ -1,47 +1,61 @@
 <template>
+<div>
 <section class="container-fluid" id="movies">
   <div class="row ">
     <div class="col-12 m-0 p-0 ">
-      <div class="jumbotron jumbotron-fluid p-4 imag mt-3"  v-for="peli2 in mispeliculas2" :key="peli2.episode_id">    
-        <h1 class="display-4 text-sm">Episode {{ peli2.episode_id }}: {{ peli2.title }} </h1>
-        <p class="lead text-sm">{{ peli2.opening_crawl }}</p>
-        <hr class="my-4 text-sm">
-        <p class="text-sm"> Director: {{ peli2.director }}</p> 
-        <p class="text-sm">Productor: {{ peli2.producer }}</p>   
-        <p class="text-sm">Fecha de Lanzamiento: {{ peli2.release_date }}</p>    
-        <p class="lead">
-          <button type="button" class="btn btn-primary btn-light" data-toggle="modal" :data-target="'#'+ peli2.episode_id ">
+      <div class="jumbotron jumbotron-fluid p-3 imag mt-3 w-100"  v-for="peli2 in mispeliculas2" :key="peli2.episode_id"> 
+      
+       <div class="d-flex flex-wrap flex-row justify-content-around ">
+         <div class=" d-flex flex-column w-50" >
+           <h1 class="display-5 text-sm mb-4 ">Episode {{ peli2.episode_id }}: {{ peli2.title }} </h1>
+           <p class="lead text-sm text-justify">{{ peli2.opening_crawl }}</p>
+           <p class="text-sm">Director: {{ peli2.director }}</p> 
+           <p class="text-sm">Productor: {{ peli2.producer }}</p>   
+           <p class="text-sm">Fecha de Lanzamiento: {{ peli2.release_date }} </p> 
+          <p class="lead">
+          <button type="button" class="btn btn-primary btn-light" data-toggle="modal" :data-target="'#portafoliomodal'+ peli2.episode_id">
             More Info 
-         </button>
-        </p>
-        
+          </button>
+          </p>
+         </div>
+         
+          <figure class="">
+            <img :src="'peliculas/'+peli2.title.split(' ').join('_').toLowerCase()+'.jpg'" 
+            :alt="peli2.title" class="fotos">
+          </figure> 
+       </div>   
+    
       </div>
     </div>    
   </div>
   
+</section>
 
-<div class="modal fade" id="episode_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="(peli2,index) in mispeliculas2" :key="index">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Characters pelicula 4</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <per :url="peli2.characters"></per>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+<!-- modal -->
+<div class="modal fade" :id="'portafoliomodal'+peli2.episode_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="peli2 in mispeliculas2" :key="peli2.episode_id">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Charcters of Episode {{peli2.episode_id}}: {{peli2.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <per :url="peli2.characters"></per>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+</div>
+
 </div>
 
 
-</section>
+
+
 </template>
 <script>
 import axios from 'axios'
@@ -84,11 +98,19 @@ export default {
 .imag {
   
   color: white;
-  background-color: #616161
+  background-color: rgba(36, 34, 34, 0.1)
 
 }
 #movies{
   
   background-image: url("../assets/img/space.png");
 }
+
+.fotos{
+  width: 300px;
+  height: auto;
+}
+
+
+
 </style>

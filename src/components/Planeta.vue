@@ -1,23 +1,34 @@
 <template>
 <section class="container-fluid" id="planeta">
   
-    <div class="col-12 d-flex flex-wrap flex-row justify-content-around p-2">
-      <div class="jumbotron jumbotron-fluid p-4"  v-for="plane in misplanetas" :key="plane.name">
-        <h1 class="display-4 text-sm"> {{ plane.name }} </h1>
-        <p class="lead text-sm">{{ plane.diameter }}</p>
-        <hr class="my-4 text-sm">
-        <p class="text-sm"> clima: {{ plane.climate }}</p> 
-        <p class="text-sm">terrenos: {{ plane.terrain }}</p>   
-        <p class="text-sm">superficie de agua: {{ plane.surface_water }}</p>  
-        <p class="text-sm">poblacion: {{ plane.population }}</p>    
-      </div>
+    <div class="col-sm-12 col-md-12 d-flex flex-wrap  justify-content-around mx-1 mb-3">
+
+      <div class="card mb-3 " style="width: 18rem; height:auto; box-sizing:border-box;" v-for="plane in misplanetas" :key="plane.name">
+         <div class="card-body">
+         <h3 class=" card-title display-5 "> {{ plane.name }}</h3>
+         <p class="lead text-right">{{ plane.diameter }}</p>
+         </div>
+         <ul class="list-group list-group-flush">
+           <li class="list-group-item">Climate: {{ plane.climate }}</li>
+           <li class="list-group-item">Terrain: {{ plane.terrain }}</li>
+           <li class="list-group-item">Surface Of Water: {{ plane.surface_water }}</li>
+           <li class="list-group-item">Population: {{ plane.population }}</li>
+         </ul>
+      </div> 
       
     </div>                    
 
   <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-      <button type="button" class="btn btn-primary btn-dark m-3 " @click="previousP(previous)">Previous</button>
-       <button type="button" class="btn btn-primary btn-dark m-3 " @click="nextP(next)">Next</button>
+    
+     <div class="col-12 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-dark m-3 disabled " @click="previousP(previous)"
+            v-if="previous == null">Previous</button>
+             <button type="button" class="btn btn-primary btn-dark m-3 " @click="previousP(previous)"
+            v-else>Previous</button>
+            <button type="button" class="btn btn-primary btn-dark m-3 disabled" @click="nextP(next)"
+             v-if="next == null">Next</button>
+             <button type="button" class="btn btn-primary btn-dark m-3 " @click="nextP(next)"
+             v-else>Next</button>
     </div>
   </div>
 </section>

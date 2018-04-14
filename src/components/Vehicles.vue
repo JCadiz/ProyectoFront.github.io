@@ -16,8 +16,14 @@
       </div>
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-dark m-3 " @click="previousV(previous)">Previous</button>
-            <button type="button" class="btn btn-primary btn-dark m-3 " @click="nextV(next)">Next</button>
+             <button type="button" class="btn btn-primary btn-dark m-3 disabled " @click="previousV(previous)"
+            v-if="previous == null">Previous</button>
+             <button type="button" class="btn btn-primary btn-dark m-3 " @click="previousV(previous)"
+            v-else>Previous</button>
+            <button type="button" class="btn btn-primary btn-dark m-3 disabled" @click="nextV(next)"
+             v-if="next == null">Next</button>
+             <button type="button" class="btn btn-primary btn-dark m-3 " @click="nextV(next)"
+             v-else>Next</button>
         </div>  
     </div>
 </div>

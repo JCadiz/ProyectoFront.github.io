@@ -1,10 +1,10 @@
 <template>
 <div>
-     <ul class="list-group list-group-flush" >
-       <li class="list-group-item">Nombre: {{misEspecies.name}}</li>
-       <li class="list-group-item">Classification: {{misEspecies.classification}}</li>
-       <li class="list-group-item">Language: {{misEspecies.language}}</li>
-     </ul>
+     
+       <p class="list-group-item">Nombre: {{misEspecies.name}}</p>
+       <p class="list-group-item">Classification: {{misEspecies.classification}}</p>
+       <p class="list-group-item">Language: {{misEspecies.language}}</p>
+    
 </div>
 </template>
 <script>
