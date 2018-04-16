@@ -1,15 +1,15 @@
 <template>
   <div class="container-fluid">
     <div class="col-12 d-flex flex-wrap flex-row justify-content-around m-2 mb-3">
-        <div class="card mb-3" style="width: 18rem;" v-for="(nav,index) in Naves" :key="index">
+        <div class="card mb-3 mt-4" style="width: 18rem;" v-for="(nav,index) in Naves" :key="index">
            <div class="card-body">
-            <h3 class="card-title">{{ nav.name}}</h3>
-            <p class="card-text">{{ nav.model}}</p>
+            <h3 class="card-title">{{ nav.name}}</h3><b></b>
            </div>
            <ul class="list-group list-group-flush">
-             <li class="list-group-item">{{ nav.manufacturer }}</li>
-             <li class="list-group-item">{{ nav.crew }}</li>
-             <li class="list-group-item">{{ nav.passengers }}</li>
+             <li class="list-group-item"><b>Model:</b> {{ nav.model}}.</li>
+             <li class="list-group-item"><b>Manufacturer:</b> {{ nav.manufacturer }}.</li>
+             <li class="list-group-item"><b>Crew:</b> {{ nav.crew }}.</li>
+             <li class="list-group-item"><b>Passengers:</b> {{ nav.passengers }}.</li>
            </ul>
          </div>
       </div>

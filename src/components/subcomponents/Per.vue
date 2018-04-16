@@ -1,6 +1,6 @@
 <template>
  <div>
-     <p v-for="(pers,index) in misPer" :key="index" class=" text-center">
+     <p v-for="(pers,index) in misPer" :key="index" class=" text-center color">
          {{pers.name}}
      </p>
  </div>
@@ -34,3 +34,14 @@ export default {
   
 }
 </script>
+
+<style scoped>
+.color{
+  color:black;
+  /* font-family: 'Gugi', cursive; */
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.2em;
+}
+
+</style>
+

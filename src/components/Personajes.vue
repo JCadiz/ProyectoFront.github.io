@@ -1,14 +1,15 @@
 <template>
-  <div class="conatiner-fluid characters">
+<div>
+<div class="conatiner-fluid characters">
       <div class="row">
         <div class="col-12 d-flex flex-wrap flex-row justify-content-around mx-1 mb-3">
 
       <!-- div de cards definitivo -->
-        <div class="card mb-3 " style="width: 18rem; height:auto; box-sizing:border-box;" v-for="(per,index) in mispersonajes" :key="index">
+        <div class="card mb-3 mx-3 mt-3" style="width: 18rem; height:auto; box-sizing:border-box;" v-for="(per,index) in mispersonajes" :key="index">
           <img class="card-img-top img-thumbnail" :src="'personajes/'+per.name.split(' ').join('_').toLowerCase()+'.jpg'" 
             :alt="per.name">
           <div class="card-body">
-            <h4 class="card-title text-center">{{ per.name }}</h4>
+            <h4 class="card-title text-center">{{ per.name.toLowerCase() }}</h4>
           </div>
           <ul class="list-group">
             <li>
@@ -17,30 +18,16 @@
            <li>
               <pla :url=" per.homeworld "></pla>
            </li>
-           
-          <div class="accordion" id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0 displa-5 text-center">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" :data-target="'#collapseOne'+per.name.split(' ').join('_').toLowerCase()" aria-expanded="true" aria-controls="collapseOne">
-                     Films
-                  </button>
-                </h2>
-              </div>
-              <div :id="'collapseOne'+per.name.split(' ').join('_').toLowerCase()" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    <films :url=" per.films "></films> 
-                </div>
-                </div>
-            </div> 
-             </div> 
-          </ul>
-      
+          </ul>  
+            <button class="btn btn-link p5" data-toggle="modal" :data-target="'#portafoliomodal'+per.name.split(' ').join('_').toLowerCase()">
+                Films
+            </button>  
+          
     </div> 
   </div>
 </div> 
-    <!-- botones -->
 
+    <!-- botones -->
 
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
@@ -54,10 +41,31 @@
              v-else>Next</button>
         </div>  
     </div>
-    
-
-
   </div>
+
+
+
+  <!-- modal -->
+<div class="modal fade" :id="'portafoliomodal'+per.name.split(' ').join('_').toLowerCase()" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" v-for="(per,index) in mispersonajes" :key="index">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content w-100">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Participation of {{ per.name }}:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <films :url=" per.films"></films> 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Close </button>
+              </div>
+            </div>
+          </div>
+</div>
+
+</div>
 </template>
 <script>
 import axios from 'axios'
@@ -74,10 +82,9 @@ export default {
     'films': Films 
   },
   mounted(){
-    console.log('componente cargado de personajes')
+   
     this.getPersonaje();
-    
-    
+   
   },
   data(){
       return{
@@ -124,11 +131,22 @@ export default {
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+
+.p5{
+  color:rgb(84, 82, 236);
+  /* font-family: 'Gugi', cursive; */
+  font-family: starjedi;
+  font-size: 1.1em;
+}
+
 img{
   width: 300px;
   height: 250px;
   
 }
+
 
 .characters{
    background-image: url("../assets/img/space.png");

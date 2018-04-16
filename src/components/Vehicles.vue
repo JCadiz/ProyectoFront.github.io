@@ -1,16 +1,16 @@
 <template>
 <div class="container-fluid">
     <div class="col-12 d-flex flex-wrap flex-row justify-content-around m-2 mb-3">
-        <div class="card mb-3" style="width: 18rem;" v-for="(vehi,index) in vehiculos" :key="index">
+        <div class="card mb-3 mx-3 mt-3" style="width: 18rem;" v-for="(vehi,index) in vehiculos" :key="index">
            <div class="card-body">
-            <h3 class="card-title">{{ vehi.name}}</h3>
-            <p class="card-text">{{ vehi.model}}</p>
+            <h3 class="card-title">{{ vehi.name.toLowerCase()}}</h3>
            </div>
            <ul class="list-group list-group-flush">
-             <li class="list-group-item">{{ vehi.length }}</li>
-             <li class="list-group-item">{{ vehi.crew }}</li>
-             <li class="list-group-item">{{ vehi.passengers }}</li>
-             <li class="list-group-item">{{ vehi.vehicle_class }}</li>
+             <li class="list-group-item"><b>Model:</b> {{ vehi.model}}.</li>
+             <li class="list-group-item"><b>Length:</b> {{ vehi.length }}.</li>
+             <li class="list-group-item"><b>Crew:</b> {{ vehi.crew }}.</li>
+             <li class="list-group-item"><b>Passengers:</b> {{ vehi.passengers }}.</li>
+             <li class="list-group-item"><b>Vehicle Class:</b> {{ vehi.vehicle_class }}.</li>
            </ul>
          </div>
       </div>

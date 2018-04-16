@@ -1,5 +1,5 @@
 <template>
-  <div class="starship">
+  <div class="starship page">
     <div class="container-fluid ">
     <div class="row  ">
     <div class="col-12 m-0 p-0">
@@ -12,20 +12,20 @@
         <div class="carousel-inner  ">
             <div class="carousel-item active">
                 <div class="carousel-caption flexbox-container  ">
-                  <h1>Encuentra tus Mejores Lugares para Vivir.</h1>
+                  <h1>Know the Most important Starships in Star Wars</h1>
                 </div>
-                <img class="d-block w-100 m-0 p-0" src="../assets/img/carrusel3.jpg" alt="First slide">
+                <img class="d-block w-100 m-0 p-0" src="../assets/img/carrusel2StarShips.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 m-0 p-0" src="../assets/img/carusel2.jpg" alt="Second slide">
+                <img class="d-block w-100 m-0 p-0" src="../assets/img/carrusel1StarShips.jpg" alt="Second slide">
                 <div class="carousel-caption flexbox-container">
-                  <h1>A un Increible Precio</h1>
+                  <h1>Epic Starships battle</h1>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 m-0 p-0" src="../assets/img/carusel1.jpg" alt="Third slide">
+                <img class="d-block w-100 m-0 p-0" src="../assets/img/carrusel3StarShips.jpg" alt="Third slide">
                 <div class="carousel-caption flexbox-container">
-                    <h1>Registrate y Mantente al Dia con Nuestras Promociones</h1>
+                    <h1>learn, discover the details of every single StarShips.</h1>
                 </div>
             </div>
         </div>
@@ -46,7 +46,38 @@
     </div>
   </div>
 
-
+<section>
+  <div class="row">
+    <div class="col-12 d-flex flex-row flex-column bg-dark footer">
+      <div class="d-flex flex-row justify-content-center align-content-center">
+        <h3 class="mt-5 text-center p3"> Follow Star Wars:</h3>
+      </div>
+    
+         <div class="social d-flex justify-content-center ">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                </li>
+                <li>
+                    <a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                </li>
+                <li>
+                    <a href="https://github.com" target="_blank" class="fa fa-tumblr"></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com" target="_blank" class="fa fa-google-plus"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" class="fa fa-youtube"></a>
+                </li>
+            </ul>
+              </div>
+        </div>
+  </div>
+</section> 
   </div>
 </div>
 </template>
@@ -69,8 +100,63 @@ export default {
   align-items: center;
   height: 100vh;
 }
+
+h1{
+  background: rgba(0, 0, 0, 0.11);
+}
+
+h1:hover{
+ color:white;
+}
+
 img{
   height: 100vh;
+}
+
+.social ul {
+    display: inline;
+  
+}
+
+.social li {
+    list-style: none;
+    display: inline;
+    margin:1em;
+}
+
+.social ul li a {
+    padding: 10px 15px;
+    font-size: 1.8em;
+    color: rgb(167, 160, 160);
+    display: inline-block;
+    background: rgba(44, 44, 44, 0);
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.social ul li a:hover{
+  color:white;
+}
+
+.footer{
+  background-image: url('../assets/video/footer.jpg');
+  background-position-y: -90px;
+  background-position-x: center;
+  opacity: 0.85;
+  line-height: 10vh;
+}
+
+.starship{
+    background:url("../assets/img/space.png");
+   overflow: hidden;
+}
+
+.p3{
+  color:white;
+  text-align: center;
 }
 
 </style>

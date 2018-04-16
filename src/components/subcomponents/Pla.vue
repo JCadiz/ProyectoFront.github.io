@@ -1,8 +1,6 @@
 <template>
   <div>
-     
-       <li class="list-group-item">Homeland: {{ misPlaneta.name }}</li>
-     
+    <li class="list-group-item"><b>Homeland:</b> {{ misPlaneta.name }}.</li>   
 </div>
 </template>
 <script>

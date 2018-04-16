@@ -3,16 +3,16 @@
   
     <div class="col-sm-12 col-md-12 d-flex flex-wrap  justify-content-around mx-1 mb-3">
 
-      <div class="card mb-3 " style="width: 18rem; height:auto; box-sizing:border-box;" v-for="plane in misplanetas" :key="plane.name">
+      <div class="card mb-3 mx-2" style="width: 18rem; height:auto; box-sizing:border-box;" v-for="plane in misplanetas" :key="plane.name">
          <div class="card-body">
-         <h3 class=" card-title display-5 "> {{ plane.name }}</h3>
-         <p class="lead text-right">{{ plane.diameter }}</p>
+         <h3 class=" card-title display-5 "> {{ plane.name.toLowerCase() }}</h3>
+         <p class="lead text-right"><b>{{ plane.diameter }}</b></p>
          </div>
          <ul class="list-group list-group-flush">
-           <li class="list-group-item">Climate: {{ plane.climate }}</li>
-           <li class="list-group-item">Terrain: {{ plane.terrain }}</li>
-           <li class="list-group-item">Surface Of Water: {{ plane.surface_water }}</li>
-           <li class="list-group-item">Population: {{ plane.population }}</li>
+           <li class="list-group-item"><b>Climate: </b>{{ plane.climate }}</li>
+           <li class="list-group-item"><b>Terrain: </b>{{ plane.terrain }}</li>
+           <li class="list-group-item"><b>Surface Of Water:</b> {{ plane.surface_water }}</li>
+           <li class="list-group-item"><b>Population</b>: {{ plane.population }}</li>
          </ul>
       </div> 
       
@@ -87,3 +87,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+img{
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  background-size: cover;
+}
+</style>
