@@ -56,26 +56,26 @@
          <div class="social d-flex justify-content-center ">
             <ul>
                 <li>
-                    <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.facebook.com/StarWars" target="_blank" class="fa fa-facebook"></a>
                 </li>
                 <li>
-                    <a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                    <a href="https://twitter.com/starwars" target="_blank" class="fa fa-twitter"></a>
                 </li>
                 <li>
-                    <a href="https://github.com" target="_blank" class="fa fa-tumblr"></a>
+                    <a href="https://starwars.tumblr.com" target="_blank" class="fa fa-tumblr"></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com" target="_blank" class="fa fa-google-plus"></a>
+                    <a href="https://plus.google.com/+StarWars" target="_blank" class="fa fa-google-plus"></a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://www.instagram.com/starwars/" target="_blank" class="fa fa-instagram"></a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com" target="_blank" class="fa fa-youtube"></a>
+                    <a href="https://www.youtube.com/user/starwars" target="_blank" class="fa fa-youtube"></a>
                 </li>
             </ul>
               </div>
-        </div>
+      </div>
   </div>
 </section> 
   </div>
